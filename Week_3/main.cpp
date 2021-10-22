@@ -53,14 +53,13 @@ int main() {
 
 					if (tmp == NULL)
 						cout << "Error...\n";
-					else
+					else {
 						cout << "Sub string: " << tmp;
-					cout << endl;
 
-					if (tmp) {
 						delete[] tmp;
 						tmp = NULL;
 					}
+					cout << endl;
 
 					break;
 				}
@@ -107,10 +106,16 @@ int main() {
 					cout << "\nA number of charaters need deleting: ";
 					cin >> count;
 
-					if (s1.erase(start, count) == NULL)
+					char* tmp = s1.erase(start, count);
+
+					if (tmp == NULL)
 						cout << "Error...";
-					else
-						cout << "\nAfter deleting the string: " << s1.erase(start, count);
+					else {
+						cout << "\nAfter deleting the string: " << tmp;
+
+						delete tmp;
+						tmp = NULL;
+					}
 					cout << endl;
 
 					break;
@@ -118,7 +123,8 @@ int main() {
 
 				case 6: {
 					title(" REPLACE STRING");
-					int start, lenth; char* tmp;
+					int start, lenth; 
+					char* tmp;
 					char* s2 = new char[1000];
 
 					cout << "\nEnter starting index: ";
@@ -136,13 +142,12 @@ int main() {
 					else {
 						cout << "\nAfter replacing the string: ";
 						cout << tmp;
-					}
-					cout << endl;
 
-					if (tmp) {
 						delete[] tmp;
 						tmp = NULL;
 					}
+					cout << endl;
+
 					break;
 				}
 
@@ -150,19 +155,23 @@ int main() {
 					title(" FIND SUBSTRING");
 					int pos;
 					char* s2 = new char[1000];
+
 					cout << "\nInput substring to find: ";
 					cin >> s2;
+
 					do {
 						cout << "\nThe position where to start finding: ";
 						cin >> pos;
 						if (pos < 0 || pos > s1.length())
 							cout << "\nYou entered wrong. Please re-enter\n" << endl;
 					} while (pos < 0 || pos > s1.length());
+
 					if (s1.find(pos, s2) == true)
 						cout << "\nExist in the string";
 					else
 						cout << "\nDoes not exist in the string";
 					cout << endl;
+
 					break;
 				}
 
@@ -187,17 +196,17 @@ int main() {
 }
 void title(string message) {
 	system("cls");
-	cout << "\t\t\t\t*******************************************************\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t***";
+	cout << "\t\t\t*******************************************************\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t***";
 	for (int i = 0; i < (50 - message.size()) / 2; i++)
 		cout << " ";
 	cout << message;
 	for (int i = 0; i < (50 - message.size()) / 2; i++)
 		cout << " ";
 	cout << "***\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t*******************************************************\n";
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t*******************************************************\n";
 }
 
 void inputSelect(int& ans, int beg, int end) {
@@ -211,35 +220,35 @@ void inputSelect(int& ans, int beg, int end) {
 
 void mainMenu()
 {
-	cout << "\t\t\t\t  ***************************************************\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [1] A program building string                 *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [2] Exit                                      *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  ***************************************************\n\n";
+	cout << "\t\t\t  ***************************************************\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [1] A program building string                 *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [2] Exit                                      *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  ***************************************************\n\n";
 }
 
 void MyStringMenu()
 {
 
-	cout << "\t\t\t\t  ***************************************************\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [1] Return a number of character.             *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [2] Return a sub-string.                      *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [3] Operator+ a new string into current string*\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [4] Insert a new string into current string.  *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [5] Delete a sub-string.                      *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [6] Replace a string with a new string.       *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [7] Find a sub-string into current string.    *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  *   [8] Back.                                     *\n"
-		<< "\t\t\t\t  *                                                 *\n"
-		<< "\t\t\t\t  ***************************************************\n\n";
+	cout << "\t\t\t  ***************************************************\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [1] Return a number of character.             *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [2] Return a sub-string.                      *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [3] Operator+ a new string into current string*\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [4] Insert a new string into current string.  *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [5] Delete a sub-string.                      *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [6] Replace a string with a new string.       *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [7] Find a sub-string into current string.    *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  *   [8] Back.                                     *\n"
+		<< "\t\t\t  *                                                 *\n"
+		<< "\t\t\t  ***************************************************\n\n";
 }

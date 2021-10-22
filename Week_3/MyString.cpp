@@ -159,18 +159,43 @@ char* MyString::replace(const int& start, const int& length, const char* s2)
 	return tmp;
 }
 
-bool MyString::find(const int& start, const char* s2)
+// KMP algorithm
+// Function initialize KMP table
+void MyString::init_KMP(char* sub, int* KMP)
 {
-	int j, i;
-	for (i = start; i < size; i++)
-	{
-		for (j = 0; j < strlen(s2); j++)
-		{
-			if (str[i + j] != s2[j])
-				break;
+	int i = 0, j = -1;
+	KMP[0] = -1;
+	int n = strlen(sub);
+	while (i < n - 1) {
+		if (j == -1 || sub[i] == sub[j]) {
+			i++;
+			j++;
+			if (sub[i] != sub[j])
+				KMP[i] = j;
+			else KMP[i] = KMP[j];
 		}
-		if (j == strlen(s2))
-			return true;
+		else j = KMP[j];
 	}
+}
+bool MyString::find(const int& idx, const char* sub)
+{
+	int i = idx, j = 0;
+	int* KMP = new int[size];
+	init_KMP(str, KMP);
+	while (i + j < size) {
+		if (str[i + j] == sub[j]) {
+			j++;
+			if (j == strlen(sub))
+				return true;
+		}
+		else {
+			i = i + j - KMP[j];
+			if (j > 0)
+				j = KMP[j];
+		}
+	}
+	delete KMP;
+	KMP = NULL;
+
 	return false;
 }

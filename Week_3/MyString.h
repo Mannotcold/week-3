@@ -7,6 +7,8 @@ class MyString
 {
 	char* str;
 	int size;
+
+	void init_KMP(char*, int*);
 public:
 	MyString() {
 		size = 0;
@@ -14,8 +16,7 @@ public:
 		str[0] = '\0';
 	}
 	~MyString() {
-		if (str != NULL)
-		{
+		if (str != NULL) {
 			size = 0;
 			delete str;
 			str = NULL;

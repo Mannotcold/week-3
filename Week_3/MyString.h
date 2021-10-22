@@ -32,8 +32,8 @@ public:
 	char* operator+(const char*);
 	friend char* operator+(const char*, const MyString&);
 
-	char* insert(const int&, const MyString&);
+	char* insert(const int&, const char*);
 	char* erase(const int&, const int&);
-	char* replace(const int&, const int&, const MyString&);
-	bool find(const int&, const MyString&);
+	char* replace(const int&, const int&, const char*);
+	bool find(const int&, const char*);
 };

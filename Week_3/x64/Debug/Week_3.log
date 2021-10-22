@@ -1,9 +1,9 @@
 ﻿  MyString.cpp
-C:\Users\trand\OneDrive - VNU-HCMUS\Desktop\week-3\Week_3\MyString.cpp(8,22): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\trand\OneDrive - VNU-HCMUS\Desktop\week-3\Week_3\MyString.cpp(44,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\trand\OneDrive - VNU-HCMUS\Desktop\week-3\Week_3\MyString.cpp(60,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\trand\OneDrive - VNU-HCMUS\Desktop\week-3\Week_3\MyString.cpp(61,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\trand\OneDrive - VNU-HCMUS\Desktop\week-3\Week_3\MyString.cpp(146,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Desktop\week-3\Week_3\MyString.cpp(8,22): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Desktop\week-3\Week_3\MyString.cpp(44,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Desktop\week-3\Week_3\MyString.cpp(60,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Desktop\week-3\Week_3\MyString.cpp(61,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Desktop\week-3\Week_3\MyString.cpp(146,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   main.cpp
   Generating Code...
-  Week_3.vcxproj -> C:\Users\trand\OneDrive - VNU-HCMUS\Desktop\week-3\Week_3\x64\Debug\Week_3.exe
+  Week_3.vcxproj -> C:\Users\ACER\Desktop\week-3\Week_3\x64\Debug\Week_3.exe

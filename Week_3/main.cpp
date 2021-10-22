@@ -79,7 +79,7 @@ int main() {
 				case 4: {
 					title(" INSERT STRING");
 					int pos;
-					MyString s2;
+					char* s2 = new char[1000];
 					cout << "\nEnter string: ";
 					cin >> s2;
 					do {
@@ -119,7 +119,7 @@ int main() {
 				case 6: {
 					title(" REPLACE STRING");
 					int start, lenth; char* tmp;
-					MyString s2;
+					char* s2 = new char[1000];
 
 					cout << "\nEnter starting index: ";
 					cin >> start;
@@ -149,7 +149,7 @@ int main() {
 				case 7: {
 					title(" FIND SUBSTRING");
 					int pos;
-					MyString s2;
+					char* s2 = new char[1000];
 					cout << "\nInput substring to find: ";
 					cin >> s2;
 					do {

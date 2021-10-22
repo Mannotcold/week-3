@@ -96,9 +96,9 @@ char* MyString::subString(const int& start, const int& count)
 
 
 
-char* MyString::insert(const int& idx, const MyString& s) {
+char* MyString::insert(const int& idx, const char* s) {
 
-	char* tmp = new char[size + s.size + 1];
+	char* tmp = new char[size + strlen(s) + 1];
 
 	if (idx < 0 || idx > size)
 		return NULL;
@@ -106,11 +106,11 @@ char* MyString::insert(const int& idx, const MyString& s) {
 	for (int i = 0; i < idx; i++)
 		tmp[i] = str[i];
 
-	for (int i = 0; i < s.size; i++)
-		tmp[i + idx] = s.str[i];
+	for (int i = 0; i < strlen(s); i++)
+		tmp[i + idx] = s[i];
 
 	for (int i = idx; i <= size; i++)
-		tmp[i + s.size] = str[i];
+		tmp[i + strlen(s)] = str[i];
 
 	return tmp;
 }
@@ -135,7 +135,7 @@ char* MyString::erase(const int& start, const int& count)
 }
 
 
-char* MyString::replace(const int& start, const int& length, const MyString& s2)
+char* MyString::replace(const int& start, const int& length, const char* s2)
 {
 	if (start > this->size || start < 0) return NULL;
 
@@ -143,7 +143,7 @@ char* MyString::replace(const int& start, const int& length, const MyString& s2)
 	int dis = start + length;
 
 	if (start < this->size && dis < strlen(tmp)) {			 //Check the number of elements is replaced
-		int len = strlen(s2.str), i = start + len;
+		int len = strlen(s2), i = start + len;
 
 		for (int j = 0;; i++, j++) {
 			if (tmp[i + length] == NULL) break;
@@ -153,23 +153,23 @@ char* MyString::replace(const int& start, const int& length, const MyString& s2)
 		tmp[i] = '\0';
 	}
 	else if (dis >= strlen(tmp)) {
-		tmp[start + s2.size] = '\0';
+		tmp[start + strlen(s2)] = '\0';
 	}
 
 	return tmp;
 }
 
-bool MyString::find(const int& start, const MyString& s2)
+bool MyString::find(const int& start, const char* s2)
 {
 	int j, i;
 	for (i = start; i < size; i++)
 	{
-		for (j = 0; j < s2.size; j++)
+		for (j = 0; j < strlen(s2); j++)
 		{
-			if (str[i + j] != s2.str[j])
+			if (str[i + j] != s2[j])
 				break;
 		}
-		if (j == s2.size)
+		if (j == strlen(s2))
 			return true;
 	}
 	return false;

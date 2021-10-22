@@ -1,1 +1,3 @@
 C:\Users\trand\OneDrive - VNU-HCMUS\Desktop\week-3\Week_3\x64\Debug\Week_3.exe
+C:\Users\ACER\Desktop\week-3\Week_3\x64\Debug\Week_3.exe
+C:\Users\ACER\Desktop\week-3\Week_3\x64\Debug\Week_3.pdb

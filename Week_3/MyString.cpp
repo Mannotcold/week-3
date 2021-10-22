@@ -39,6 +39,38 @@ char* MyString::operator +(const MyString& s2) {
 	return tmp;
 }
 
+char* MyString::operator+(const char* s)
+{
+	int len = strlen(s) + this->size + 1;
+	int j = this->size;
+	char* temp = new char[len];
+
+	temp = this->subString(0, this->size);
+
+	for (int i = 0; i < strlen(s); i++) {
+		temp[j++] = s[i];
+	}
+
+	temp[j] = '\0';
+	return temp;
+}
+
+char* operator+(const char* s, const MyString& mystr)
+{
+	int len = strlen(s) + mystr.size + 1;
+	int j = strlen(s);
+	char* tmp = new char[len];
+
+	strcpy_s(tmp, j + 1, s);
+
+	for (int i = 0; i < mystr.size + 1; i++) {
+		tmp[j++] = mystr.str[i];
+	}
+	tmp[j] = '\0';
+
+	return tmp;
+}
+
 int MyString::length()
 {
 	return this->size;
